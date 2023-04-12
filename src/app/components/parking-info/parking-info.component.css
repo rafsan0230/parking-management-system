@@ -56,3 +56,29 @@
     background-color: rgb(53, 161, 243);
     border-color: rgb(53, 161, 243);
 }
+
+/*...................card-div............... */
+
+.card{
+    border-color: rgb(53, 161, 243);
+    border-radius: 20px;
+    background-color: rgb(53, 161, 243);
+    height: 20vh;
+    width: 20vw;
+    margin: 20px 0;
+}
+.card-text{
+    color: white;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+.card-subtitle{
+    align-self: flex-end;
+    padding-right: 1vw;
+}
+.card-div{
+    gap: 1vw;
+    display: flex;
+}

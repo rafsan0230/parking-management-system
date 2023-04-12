@@ -23,6 +23,30 @@
       "exit_time": "2023-04-12T15:56",
       "parking_charge": 50,
       "id": 2
+    },
+    {
+      "license": "parked",
+      "type": "Car",
+      "owner_name": "Kibria Updated",
+      "owner_phone": "017166",
+      "status": "Out",
+      "car_owner_address": "Gulshan",
+      "entry_time": "2023-04-11T20:08",
+      "exit_time": "2023-04-26T16:13",
+      "parking_charge": 50,
+      "id": 3
+    },
+    {
+      "license": "Audi",
+      "type": "MicroBus",
+      "owner_name": "Rashy",
+      "owner_phone": "0258",
+      "status": "Out",
+      "car_owner_address": "Dhanmondi",
+      "entry_time": "2023-04-12T19:20",
+      "exit_time": "2023-04-12T20:28",
+      "parking_charge": 50,
+      "id": 4
     }
   ]
 }

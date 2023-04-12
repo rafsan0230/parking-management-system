@@ -4,7 +4,7 @@
         <form class="form" [formGroup]="vehicleForm" (submit)="onSubmit()">
               <div class="form-group">
                 <label for="inputTitle" class="input-label"> Vehicle License Number</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Insert a title..." formControlName="license">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Insert license no." formControlName="license">
               </div>
             <div class="form-group">
                 <label for="type" class="input-label">Vehicle Type</label>
@@ -17,11 +17,11 @@
     
             <div class="form-group">
               <label for="name" class="input-label">Vehicle Owner Name</label>
-              <input type="text" class="form-control" id="name" placeholder="insert a venue" formControlName="owner_name">
+              <input type="text" class="form-control" id="name" placeholder="insert owner's name" formControlName="owner_name">
             </div>
             <div class="form-group">
               <label for="phone" class="input-label">Vehicle Owner Phone</label>
-              <input type="text" class="form-control" id="phone" placeholder="insert a venue" formControlName="owner_phone">
+              <input type="text" class="form-control" id="phone" placeholder="insert owner's phone number" formControlName="owner_phone">
             </div>
             <div class="form-group">
                 <label for="status" class="input-label">Status</label>
@@ -32,25 +32,65 @@
               </div>
             <div class="form-group">
               <label for="address" class="input-label">Car Owner Address</label>
-              <input type="text" class="form-control" id="address" placeholder="insert a venue" formControlName="car_owner_address">
+              <input type="text" class="form-control" id="address" placeholder="insert owner's address" formControlName="car_owner_address">
             </div>
             <div class="form-group">
                 <label for="entry" class="input-label">Time and date of car entry</label>
-                <input type="datetime-local" class="form-control" id="entry" name="entry" placeholder="insert a venue" formControlName="entry_time">
+                <input type="datetime-local" class="form-control" id="entry" name="entry" placeholder="insert entry time" formControlName="entry_time">
             </div>
             <div class="form-group">
                 <label for="exit" class="input-label">Time and date of car exit</label>
-                <input type="datetime-local" class="form-control" id="exit" name="exit" placeholder="insert a venue" formControlName="exit_time">
+                <input type="datetime-local" class="form-control" id="exit" name="exit" placeholder="insert exit time" formControlName="exit_time">
             </div>
             <div class="form-group">
               <label for="charge" class="input-label">Parking Charge</label>
-              <input type="number" class="form-control" id="charge" placeholder="insert a venue" formControlName="parking_charge">
+              <input type="number" class="form-control" id="charge" placeholder="insert parking charge" formControlName="parking_charge">
             </div>
             <button type="submit" class="btn btn-primary form-button">Submit</button>
           </form>
       </div>
     
       <div class="data-div">
+        <div class="card-div">
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title card-text">Total parked</h3>
+                  <h1 class="card-subtitle mb-2 card-text">{{parkedVehicles}}</h1>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title card-text">Total empty slot</h3>
+                  <h1 class="card-subtitle mb-2 card-text">{{total_parking_slot-parkedVehicles}}</h1>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title card-text">Time over</h3>
+                  <h1 class="card-subtitle mb-2 card-text">9</h1>
+                </div>
+              </div>
+        </div>
+        <div class="card-div">
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title card-text">Total cars</h3>
+                  <h1 class="card-subtitle mb-2 card-text">{{cars.length}}</h1>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title card-text">Total Microbus</h3>
+                  <h1 class="card-subtitle mb-2 card-text">{{microbuses.length}}</h1>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title card-text">Total Truck</h3>
+                  <h1 class="card-subtitle mb-2 card-text">{{trucks.length}}</h1>
+                </div>
+              </div>
+        </div>
         <div class="table-div">
             <h2>Vehicles Information</h2>
             <table class="table">

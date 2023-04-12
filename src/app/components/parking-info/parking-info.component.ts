@@ -9,7 +9,12 @@ import { ParkingService } from 'src/app/services/parking.service';
   styleUrls: ['./parking-info.component.css']
 })
 export class ParkingInfoComponent implements OnInit{
+  total_parking_slot:number = 50;
   vehicles:vehicle[]=[];
+  parkedVehicles:number=0;
+  cars:vehicle[]=[];
+  microbuses:vehicle[]=[];
+  trucks:vehicle[]=[];
   oneVehicle?:vehicle;
   selected_title : string ='';
 
@@ -47,8 +52,8 @@ export class ParkingInfoComponent implements OnInit{
   }
 
   update(id:string){
-    console.log("update function")
     const {license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge} = this.updateForm.value;
+    console.log({license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge});
     if(license && type && owner_name && owner_phone && status && car_owner_address && entry_time && exit_time &&parking_charge){
     this.parkingService.editDetails(id,{license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge}).subscribe((res) =>{
       const filteredVehicles = this.vehicles.filter(vehicle => vehicle.id !== id);
@@ -56,13 +61,22 @@ export class ParkingInfoComponent implements OnInit{
       console.log('filtered',filteredVehicles);
       this.vehicles=filteredVehicles;
     })
+    this.ngOnInit();
   }
   }
   
   ngOnInit(): void {
     this.parkingService.get().subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.vehicles=res;
+      const parked = this.vehicles.filter(vehicle => vehicle.exit_time? console.log('oninit') : this.parkedVehicles++);
+      // this.parkedVehicles=parked;
+      const carVehicle = this.vehicles.filter(vehicle => vehicle.type === 'Car');
+      this.cars=carVehicle;
+      const microbusVehicle = this.vehicles.filter(vehicle => vehicle.type === 'MicroBus');
+      this.microbuses=microbusVehicle;
+      const truckVehicle = this.vehicles.filter(vehicle => vehicle.type === 'Truck');
+      this.trucks=truckVehicle;
     })
   }
   onSubmit(){
