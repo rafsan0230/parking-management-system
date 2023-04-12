@@ -1,25 +1,26 @@
 {
   "vehicles": [
     {
-      "license": "5896",
+      "license": "5969",
       "type": "Car",
-      "owner_name": "rafsan",
-      "owner_phone": "01958",
-      "status": "In",
-      "car_owner_address": "Dhaka",
-      "entry_time": "2023-04-13T01:19",
-      "exit_time": "2023-04-12T00:21",
+      "owner_name": "Rafsan",
+      "owner_phone": "01968",
+      "status": "Out",
+      "car_owner_address": "dhaka",
+      "entry_time": "2023-04-12T13:53",
+      "exit_time": "2023-04-12T14:54",
+      "parking_charge": 50,
       "id": 1
     },
     {
       "license": "99999",
       "type": "Truck",
-      "owner_name": "Akib",
-      "owner_phone": "02605",
+      "owner_name": "Sajon",
+      "owner_phone": "0259",
       "status": "Out",
       "car_owner_address": "Banani",
-      "entry_time": "2023-04-12T02:27",
-      "exit_time": "2023-04-12T03:28",
+      "entry_time": "2023-04-12T13:54",
+      "exit_time": "2023-04-12T15:56",
       "parking_charge": 50,
       "id": 2
     }

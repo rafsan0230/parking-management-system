@@ -10,6 +10,8 @@ import { ParkingService } from 'src/app/services/parking.service';
 })
 export class ParkingInfoComponent implements OnInit{
   vehicles:vehicle[]=[];
+  oneVehicle?:vehicle;
+  selected_title : string ='';
 
   constructor(private fb:FormBuilder, private parkingService: ParkingService){}
 
@@ -24,9 +26,37 @@ export class ParkingInfoComponent implements OnInit{
     exit_time : '',
     parking_charge: 50
   })
+  updateForm = this.fb.group({
+    license : '',
+    type : '',
+    owner_name : '',
+    owner_phone : '',
+    status : '',
+    car_owner_address : '',
+    entry_time : '',
+    exit_time : '',
+    parking_charge: 50
+  })
 
   edit(id:string){
-    
+    this.parkingService.getDetails(id).subscribe((res) => {
+      console.log(res);
+      this.selected_title = res.license
+      this.oneVehicle=res;
+    })
+  }
+
+  update(id:string){
+    console.log("update function")
+    const {license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge} = this.updateForm.value;
+    if(license && type && owner_name && owner_phone && status && car_owner_address && entry_time && exit_time &&parking_charge){
+    this.parkingService.editDetails(id,{license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge}).subscribe((res) =>{
+      const filteredVehicles = this.vehicles.filter(vehicle => vehicle.id !== id);
+      filteredVehicles.push(res);
+      console.log('filtered',filteredVehicles);
+      this.vehicles=filteredVehicles;
+    })
+  }
   }
   
   ngOnInit(): void {
@@ -36,10 +66,10 @@ export class ParkingInfoComponent implements OnInit{
     })
   }
   onSubmit(){
-    const {license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge} = this.vehicleForm.value;
-    console.log("onsubmit", {license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge})
-    if(license && type && owner_name && owner_phone && status && car_owner_address && entry_time && exit_time &&parking_charge){
-      this.parkingService.create({license , type, owner_name, owner_phone, status, car_owner_address, entry_time, exit_time, parking_charge}).subscribe((res) => {
+    const {license , type, owner_name, owner_phone, status, car_owner_address, entry_time, parking_charge} = this.vehicleForm.value;
+    console.log("onsubmit", {license , type, owner_name, owner_phone, status, car_owner_address, entry_time, parking_charge})
+    if(license && type && owner_name && owner_phone && status && car_owner_address && entry_time &&parking_charge){
+      this.parkingService.create({license , type, owner_name, owner_phone, status, car_owner_address, entry_time, parking_charge}).subscribe((res) => {
         console.log(res);
         this.vehicles.push(res);
       })

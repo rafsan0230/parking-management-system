@@ -7,6 +7,6 @@ export interface vehicle{
     status: string;
     car_owner_address: string;
     entry_time: string;
-    exit_time: string;
+    exit_time?: string;
     parking_charge: number;
 }
