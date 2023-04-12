@@ -1,0 +1,91 @@
+<div class="whole-body">
+    <div class="form-div">
+        <h2 class="form-header">Register a Parking</h2>
+        <form class="form" [formGroup]="vehicleForm" (submit)="onSubmit()">
+              <div class="form-group">
+                <label for="inputTitle" class="input-label"> Vehicle License Number</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Insert a title..." formControlName="license">
+              </div>
+            <!-- <div class="form-group">
+              <label for="inputAddress" class="input-label">Vehicle Type</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="22/08/2023" formControlName="type">
+            </div> -->
+    
+            <div class="form-group">
+                <label for="type" class="input-label">Vehicle Type</label>
+                <select formControlName="type">
+                  <option>MicroBus </option>
+                  <option>Car</option>
+                  <option>Truck</option>
+                </select>
+              </div>
+    
+            <div class="form-group">
+              <label for="name" class="input-label">Vehicle Owner Name</label>
+              <input type="text" class="form-control" id="name" placeholder="insert a venue" formControlName="owner_name">
+            </div>
+            <div class="form-group">
+              <label for="phone" class="input-label">Vehicle Owner Phone</label>
+              <input type="text" class="form-control" id="phone" placeholder="insert a venue" formControlName="owner_phone">
+            </div>
+            <!-- <div class="form-group">
+              <label for="inputAddress" class="input-label">Status</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="insert a venue" formControlName="status">
+            </div> -->
+            <div class="form-group">
+                <label for="status" class="input-label">Status</label>
+                <select formControlName="status">
+                  <option>In </option>
+                  <option>Out</option>
+                </select>
+              </div>
+            <div class="form-group">
+              <label for="address" class="input-label">Car Owner Address</label>
+              <input type="text" class="form-control" id="address" placeholder="insert a venue" formControlName="car_owner_address">
+            </div>
+            <div class="form-group">
+                <label for="entry" class="input-label">Time and date of car entry</label>
+                <input type="datetime-local" class="form-control" id="entry" name="entry" placeholder="insert a venue" formControlName="entry_time">
+            </div>
+            <div class="form-group">
+                <label for="exit" class="input-label">Time and date of car exit</label>
+                <input type="datetime-local" class="form-control" id="exit" name="exit" placeholder="insert a venue" formControlName="exit_time">
+            </div>
+            <div class="form-group">
+              <label for="charge" class="input-label">Parking Charge</label>
+              <input type="number" class="form-control" id="charge" placeholder="insert a venue" formControlName="parking_charge">
+            </div>
+            <button type="submit" class="btn btn-primary form-button">Submit</button>
+          </form>
+      </div>
+    
+      <div class="data-div">
+        <div class="table-div">
+            <h2>Vehicles Information</h2>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Owner Name</th>
+                    <th scope="col">Vehicle Type</th>
+                    <th scope="col">License No.</th>
+                    <th scope="col">Entry time</th>
+                    <th scope="col">Exit time</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let vehicle of vehicles">
+                    <th scope="row">{{ vehicle.owner_name}}</th>
+                    <td>{{ vehicle.type}}</td>
+                    <td>{{ vehicle.license}}</td>
+                    <td>{{ vehicle.entry_time}}</td>
+                    <td>{{ vehicle.exit_time}}</td>
+                    <td>{{ vehicle.status}}</td>
+                    <td><button type="button" class="btn btn-primary btn-sm" (click)="edit(vehicle.id)">Edit</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+</div>

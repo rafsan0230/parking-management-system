@@ -1,0 +1,9 @@
+.header{
+    color: white;
+    background-color: rgb(53, 161, 243);
+    padding-left: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}

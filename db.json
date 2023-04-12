@@ -1,0 +1,27 @@
+{
+  "vehicles": [
+    {
+      "license": "5896",
+      "type": "Car",
+      "owner_name": "rafsan",
+      "owner_phone": "01958",
+      "status": "In",
+      "car_owner_address": "Dhaka",
+      "entry_time": "2023-04-13T01:19",
+      "exit_time": "2023-04-12T00:21",
+      "id": 1
+    },
+    {
+      "license": "99999",
+      "type": "Truck",
+      "owner_name": "Akib",
+      "owner_phone": "02605",
+      "status": "Out",
+      "car_owner_address": "Banani",
+      "entry_time": "2023-04-12T02:27",
+      "exit_time": "2023-04-12T03:28",
+      "parking_charge": 50,
+      "id": 2
+    }
+  ]
+}
