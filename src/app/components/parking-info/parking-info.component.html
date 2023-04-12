@@ -6,46 +6,46 @@
                 <label for="inputTitle" class="input-label"> Vehicle License Number</label>
                 <input type="email" class="form-control" id="inputEmail4" placeholder="Insert license no." formControlName="license">
               </div>
-            <div class="form-group">
-                <label for="type" class="input-label">Vehicle Type</label>
-                <select formControlName="type">
-                  <option>MicroBus </option>
-                  <option>Car</option>
-                  <option>Truck</option>
-                </select>
+              
+              <div class="form-group">
+                <label for="name" class="input-label">Vehicle Owner Name</label>
+                <input type="text" class="form-control" id="name" placeholder="insert owner's name" formControlName="owner_name">
               </div>
-    
-            <div class="form-group">
-              <label for="name" class="input-label">Vehicle Owner Name</label>
-              <input type="text" class="form-control" id="name" placeholder="insert owner's name" formControlName="owner_name">
-            </div>
-            <div class="form-group">
-              <label for="phone" class="input-label">Vehicle Owner Phone</label>
-              <input type="text" class="form-control" id="phone" placeholder="insert owner's phone number" formControlName="owner_phone">
-            </div>
-            <div class="form-group">
-                <label for="status" class="input-label">Status</label>
-                <select formControlName="status">
+              <div class="form-group">
+                <label for="phone" class="input-label">Vehicle Owner Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="insert owner's phone number" formControlName="owner_phone">
+              </div>
+              <div class="form-group">
+                <label for="address" class="input-label">Car Owner Address</label>
+                <input type="text" class="form-control" id="address" placeholder="insert owner's address" formControlName="car_owner_address">
+              </div>
+              <div class="form-group">
+                <label for="entry" class="input-label">Time and date of car entry</label>
+                <input type="datetime-local" class="form-control" id="entry" name="entry" placeholder="insert entry time" formControlName="entry_time">
+              </div>
+              <div class="form-group">
+                <label for="exit" class="input-label">Time and date of car exit</label>
+                <input type="datetime-local" class="form-control" id="exit" name="exit" placeholder="insert exit time" formControlName="exit_time">
+              </div>
+              <div class="form-group">
+                  <label for="type" class="input-label">Vehicle Type: </label>
+                  <select class="options" formControlName="type">
+                    <option>MicroBus </option>
+                    <option>Car</option>
+                    <option>Truck</option>
+                  </select>
+                </div>
+              <div class="form-group">
+                <label for="status" class="input-label">Vehicle Status: </label>
+                <select class="options" formControlName="status">
                   <option>In </option>
                   <option>Out</option>
                 </select>
               </div>
-            <div class="form-group">
-              <label for="address" class="input-label">Car Owner Address</label>
-              <input type="text" class="form-control" id="address" placeholder="insert owner's address" formControlName="car_owner_address">
-            </div>
-            <div class="form-group">
-                <label for="entry" class="input-label">Time and date of car entry</label>
-                <input type="datetime-local" class="form-control" id="entry" name="entry" placeholder="insert entry time" formControlName="entry_time">
-            </div>
-            <div class="form-group">
-                <label for="exit" class="input-label">Time and date of car exit</label>
-                <input type="datetime-local" class="form-control" id="exit" name="exit" placeholder="insert exit time" formControlName="exit_time">
-            </div>
-            <div class="form-group">
-              <label for="charge" class="input-label">Parking Charge</label>
-              <input type="number" class="form-control" id="charge" placeholder="insert parking charge" formControlName="parking_charge">
-            </div>
+              <div class="form-group">
+                <label for="charge" class="input-label">Parking Charge</label>
+                <input type="number" class="form-control" id="charge" placeholder="insert parking charge" formControlName="parking_charge">
+              </div>
             <button type="submit" class="btn btn-primary form-button">Submit</button>
           </form>
       </div>
@@ -92,7 +92,8 @@
               </div>
         </div>
         <div class="table-div">
-            <h2>Vehicles Information</h2>
+          <h2>Vehicles Information</h2>
+          <h3>See information of a particuler day</h3>
             <table class="table">
                 <thead>
                   <tr>
